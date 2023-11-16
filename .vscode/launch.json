@@ -10,7 +10,7 @@
             "request": "launch",
             "preLaunchTask": "build",
             // If you have changed target frameworks, make sure to update the program path.
-            "program": "${workspaceFolder}/SeatingChart/bin/Debug/net7.0/SeatingChart.dll",
+            "program": "${workspaceFolder}/SeatingChart/bin/Debug/net8.0/SeatingChart.dll",
             "args": [],
             "cwd": "${workspaceFolder}/SeatingChart",
             "stopAtEntry": false,
