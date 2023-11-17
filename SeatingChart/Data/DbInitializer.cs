@@ -16,8 +16,7 @@ namespace ContosoUniversity.Data
             var students = new Student[]
             {
                 new Student{FirstName="Carson",MiddleName="Alexander",LastName="Buckingham"},
-                new Student{FirstName="Noah", MiddleName="Clay", LastName="Chaffin"}, 
-                new Student{FirstName="", MiddleName="", LastName=""}, 
+                new Student{FirstName="Noah", MiddleName="Clay", LastName="Chaffin"},
                 new Student{FirstName="Ian", MiddleName="Rohan", LastName="Walker"},
                 new Student{FirstName="Colten", MiddleName="J", LastName="Berry"},
                 new Student{FirstName="Natalie", MiddleName="Belle", LastName="Aikman"},
