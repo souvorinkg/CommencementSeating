@@ -20,5 +20,6 @@ namespace SeatingChart.Data
         {
             modelBuilder.Entity<Student>().ToTable("Student");
         }
+        public DbSet<SeatingChart.Models.Seat> Seat { get; set; }
     }
 }
