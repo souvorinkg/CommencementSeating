@@ -5,79 +5,68 @@
     ViewData["Title"] = "Students";
 }
 
-<h2>Students</h2>
-<p>
-    <a asp-page="Create">Create New</a>
-</p> 
+<html>
+<head>
+    <title>Your GridView Example</title>
+    <link href="https://cdn.syncfusion.com/ej2/17.1.43/material.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.syncfusion.com/ej2/17.1.43/material.css">
+    <script src="https://cdn.syncfusion.com/ej2/17.1.43/dist/ej2.min.js"></script>
+</head>
+<body>
+    <div id="Grid"></div>
+    <button id="addRowBtn">Add Row</button>
+    <button id="deleteRowBtn">Delete Row</button>
+    <button id="addColumnBtn">Add Column</button>
+    <button id="deleteColumnBtn">Delete Column</button>
 
-<form asp-page="./Index" method="get">
-    <div class="form-actions no-color">
-        <p>
-            Find by name:
-            <input type="text" name="SearchString" value="@Model.CurrentFilter" />
-            <input type="submit" value="Search" class="btn btn-primary" /> |
-            <a asp-page="./Index">Back to full List</a>
-        </p>
-    </div>
-</form>
+    <script>
+        var grid;
+        var data = [
+            { Column1: "Value1", Column2: "Value2" },
+            { Column1: "Value3", Column2: "Value4" },
+            // Add more data as needed
+        ];
 
-<table class="table">
-    <thead>
-        <tr>
-            
-              <th>
-                @Html.DisplayNameFor(model => model.Students[0].FirstName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Students[0].MiddleName)
-            </th> 
-            <th>
-                <a asp-page="./Index" asp-route-sortOrder="@Model.NameSort"
-                   asp-route-currentFilter="@Model.CurrentFilter">
-                    @Html.DisplayNameFor(model => model.Students[0].LastName)
-                </a>
-            </th> 
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model.Students)
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.FirstName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.MiddleName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.LastName)
-                </td>
-                <td>
-                    <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
-                    <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
-                    <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
-                </td>
-            </tr>
+        function createGrid() {
+            grid = new ej.grids.Grid({
+                dataSource: data,
+                columns: [
+                    { field: 'Column1', headerText: 'Column 1' },
+                    { field: 'Column2', headerText: 'Column 2' },
+                    // Add more columns as needed
+                ]
+            });
+            grid.appendTo('#Grid');
         }
-    </tbody>
-</table> 
-@{
-    var prevDisabled = !Model.Students.HasPreviousPage ? "disabled" : "";
-    var nextDisabled = !Model.Students.HasNextPage ? "disabled" : "";
-}
 
-<a asp-page="./Index"
-   asp-route-sortOrder="@Model.CurrentSort"
-   asp-route-pageIndex="@(Model.Students.PageIndex - 1)"
-   asp-route-currentFilter="@Model.CurrentFilter"
-   class="btn btn-primary @prevDisabled">
-    Previous
-</a>
-<a asp-page="./Index"
-   asp-route-sortOrder="@Model.CurrentSort"
-   asp-route-pageIndex="@(Model.Students.PageIndex + 1)"
-   asp-route-currentFilter="@Model.CurrentFilter"
-   class="btn btn-primary @nextDisabled">
-    Next
-</a>
+        function addRow() {
+            var newRow = {};
+            grid.dataSource.push(newRow);
+            grid.refresh();
+        }
+
+        function deleteRow() {
+            grid.dataSource.pop();
+            grid.refresh();
+        }
+
+        function addColumn() {
+          grid.columns.add("Plz work")
+          grid.refresh;
+        
+        }
+
+        function deleteColumn() {
+            grid.dataSource.pop();
+            grid.refresh();
+        }
+
+        createGrid();
+
+        document.getElementById('addRowBtn').addEventListener('click', addRow);
+        document.getElementById('deleteRowBtn').addEventListener('click', deleteRow);
+        document.getElementById('addColumnBtn').addEventListener('click', addColumn);
+        document.getElementById('deleteColumnBtn').addEventListener('click', deleteColumn);
+    </script>
+</body>
+</html>
