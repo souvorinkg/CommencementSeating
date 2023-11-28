@@ -5,68 +5,27 @@
     ViewData["Title"] = "Students";
 }
 
+<h2>Students</h2>
 <html>
 <head>
     <title>Your GridView Example</title>
     <link href="https://cdn.syncfusion.com/ej2/17.1.43/material.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdn.syncfusion.com/ej2/17.1.43/material.css">
+    <link rel="stylesheet" href="https://cdn.syncfusion.com/ej2/17.1.43/material.css"> 
+    <script src="jquery-3.7.1.min.js"></script>
     <script src="https://cdn.syncfusion.com/ej2/17.1.43/dist/ej2.min.js"></script>
 </head>
 <body>
-    <div id="Grid"></div>
+    <script>
+        var student_list = @Html.Raw(Json.Serialize(Model.Students));
+    </script>
     <button id="addRowBtn">Add Row</button>
     <button id="deleteRowBtn">Delete Row</button>
     <button id="addColumnBtn">Add Column</button>
     <button id="deleteColumnBtn">Delete Column</button>
+    <div id="Grid"></div>
 
     <script>
-        var grid;
-        var data = [
-            { Column1: "Value1", Column2: "Value2" },
-            { Column1: "Value3", Column2: "Value4" },
-            // Add more data as needed
-        ];
-
-        function createGrid() {
-            grid = new ej.grids.Grid({
-                dataSource: data,
-                columns: [
-                    { field: 'Column1', headerText: 'Column 1' },
-                    { field: 'Column2', headerText: 'Column 2' },
-                    // Add more columns as needed
-                ]
-            });
-            grid.appendTo('#Grid');
-        }
-
-        function addRow() {
-            var newRow = {};
-            grid.dataSource.push(newRow);
-            grid.refresh();
-        }
-
-        function deleteRow() {
-            grid.dataSource.pop();
-            grid.refresh();
-        }
-
-        function addColumn() {
-          grid.columns.add("Plz work")
-          grid.refresh;
-        
-        }
-
-        function deleteColumn() {
-            grid.dataSource.pop();
-            grid.refresh();
-        }
-
-        createGrid();
-
-        document.getElementById('addRowBtn').addEventListener('click', addRow);
-        document.getElementById('deleteRowBtn').addEventListener('click', deleteRow);
-        document.getElementById('addColumnBtn').addEventListener('click', addColumn);
-        document.getElementById('deleteColumnBtn').addEventListener('click', deleteColumn);
+       
     </script>
 </body>
 </html>

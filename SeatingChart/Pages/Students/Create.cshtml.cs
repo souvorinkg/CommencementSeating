@@ -28,21 +28,21 @@ namespace SeatingChart.Pages.Students
         public Student Student { get; set; } = default!;
 
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
-       public async Task<IActionResult> OnPostAsync()
-{
-    var emptyStudent = new Student();
+        public async Task<IActionResult> OnPostAsync()
+        {
+            var emptyStudent = new Student();
 
-    if (await TryUpdateModelAsync<Student>(
-        emptyStudent,
-        "student",   // Prefix for form value.
-        s => s.FirstName, s => s.MiddleName, s => s.LastName))
-    {
-        _context.Students.Add(emptyStudent);
-        await _context.SaveChangesAsync();
-        return RedirectToPage("./Index");
-    }
+            if (await TryUpdateModelAsync<Student>(
+                emptyStudent,
+                "student",   // Prefix for form value.
+                s => s.FirstName, s => s.MiddleName, s => s.LastName))
+            {
+                _context.Students.Add(emptyStudent);
+                await _context.SaveChangesAsync();
+                return RedirectToPage("./Index");
+            }
 
-    return Page();
-}
+            return Page();
+        }
     }
 }
