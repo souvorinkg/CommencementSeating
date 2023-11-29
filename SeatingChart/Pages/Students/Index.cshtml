@@ -16,7 +16,9 @@
 </head>
 <body>
     <script>
-        var student_list = @Html.Raw(Json.Serialize(Model.Students));
+        var student_list = @Html.Raw(Json.Serialize(Model.Students));  
+        
+        
     </script>
     <button id="addRowBtn">Add Row</button>
     <button id="deleteRowBtn">Delete Row</button>
@@ -26,6 +28,11 @@
 
     <script>
        
-    </script>
+    </script> 
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+} 
+
 </body>
 </html>

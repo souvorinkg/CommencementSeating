@@ -28,7 +28,8 @@ namespace ContosoUniversity.Data
                 new Student{FirstName="Jayson", MiddleName="L", LastName="Gibson"},
                 new Student{FirstName="Madison", MiddleName="Ragon", LastName="Connaway"},
                 new Student{FirstName="Brandon", MiddleName="Issac", LastName="Kutris"}
-            };
+            }; 
+            
 
             context.Students.AddRange(students);
             context.SaveChanges();

@@ -60,7 +60,8 @@ namespace SeatingChart.Pages.Students
                 default:
                     studentsIQ = studentsIQ.OrderBy(s => s.LastName);
                     break;
-            }
+            } 
+        
 
             var pageSize = Configuration.GetValue("PageSize", 4);
             Students = await PaginatedList<Student>.CreateAsync(
