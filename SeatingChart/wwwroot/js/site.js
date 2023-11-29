@@ -15,7 +15,7 @@ var numCols = 2;
 
 var data = [
     { Column1: student_list[0].firstName + " " + student_list[0].middleName + " " + student_list[0].lastName, Column2: "Value2", Column3: "Value3" },
-    { Column1: student_list[1].firstName, Column2: "Value4", Column3: "Value5" }, 
+    { Column1: student_list[1].firstName, Column2: "Value4", Column3: "Value5" },
     // Add more data as needed
 ];   
 
@@ -30,13 +30,14 @@ function createGrid() {
 
 
     for (var i = 0; i < numCols; i++) {
-        cols.push( { field: `Column${i+1}`, headerText: `${i+1}` } );
+        cols.push( { field: `Column${i+1}`, headerText: `${i+1}`, allowEditing: true } );
     }
     grid = new ej.grids.Grid({
         dataSource: data,
-        columns: cols, 
+        columns: cols,
+        editSettings: {allowEditing: true},
         gridLines: 'Both',
-        selectionSettings: {mode: 'Cell', cellSelectionMode: 'Box'}
+        selectionSettings: {mode: 'Cell', cellSelectionMode: 'Box'},
     });
     grid.appendTo('#Grid');
 }
