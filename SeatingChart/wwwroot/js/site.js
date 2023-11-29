@@ -5,8 +5,6 @@ var grid;
 
 var numCols = 2; 
 
-alert(student_list.firstName)
-
 
 // var cols = [
 //     { field: 'Column1', headerText: '1' },
@@ -16,7 +14,7 @@ alert(student_list.firstName)
 
 
 var data = [
-    { Column1: student_list.firstName + " " + student_list.middleName + " " + student_list.lastName, Column2: "Value2", Column3: "Value3" },
+    { Column1: student_list[0].firstName + " " + student_list[0].middleName + " " + student_list[0].lastName, Column2: "Value2", Column3: "Value3" },
     { Column1: student_list[1].firstName, Column2: "Value4", Column3: "Value5" }, 
     // Add more data as needed
 ];   
