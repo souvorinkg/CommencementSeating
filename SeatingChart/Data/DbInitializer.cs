@@ -1,5 +1,6 @@
 using SeatingChart.Models;
-using SeatingChart.Data;
+using SeatingChart.Data; 
+using Microsoft.AspNetCore.Mvc;
 
 namespace ContosoUniversity.Data
 {
@@ -27,7 +28,7 @@ namespace ContosoUniversity.Data
                 new Student{FirstName="Farah", MiddleName="Mackenzie", LastName="Bell"}, 
                 new Student{FirstName="Jayson", MiddleName="L", LastName="Gibson"},
                 new Student{FirstName="Madison", MiddleName="Ragon", LastName="Connaway"},
-                new Student{FirstName="Brandon", MiddleName="Issac", LastName="Kutris"}
+                new Student{FirstName="Brandon", MiddleName="Issac", LastName="Kutris"} 
             }; 
             
 

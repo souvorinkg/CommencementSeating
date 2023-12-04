@@ -26,23 +26,15 @@ namespace SeatingChart.Pages.Students
         [BindProperty]
         public int testing { get; set; } = default!;
 
-        public async Task<IActionResult> OnGetAsync(String? name)
+        public async Task<IActionResult> OnGetAsync(int? id)
         {
-            // if (id == null)
-            // {
-            //     return NotFound();
-            // }
-            // else {
-            //     testing = (int)id;
-            //     return Page();
-            // }
-
-            if (name == null)
+            if (id == null)
             {
                 return NotFound();
+            
             }
 
-            var student = await _context.Students.FirstOrDefaultAsync(m => m.FirstName == name);
+            var student = await _context.Students.FirstOrDefaultAsync(m => m.ID == (int)id);
             if (student == null)
             {
                 return NotFound();

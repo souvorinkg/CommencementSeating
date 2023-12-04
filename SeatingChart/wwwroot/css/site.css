@@ -19,4 +19,11 @@ html {
 
 body {
   margin-bottom: 60px;
+} 
+
+chart 
+{
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+
 }

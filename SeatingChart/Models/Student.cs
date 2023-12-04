@@ -18,7 +18,7 @@ namespace SeatingChart.Models
         public string MiddleName {get; set;} 
         
         [Display(Name = "Last Name")] 
-         public string LastName { get; set; } 
+         public string LastName { get; set; }           
         
     }
 }

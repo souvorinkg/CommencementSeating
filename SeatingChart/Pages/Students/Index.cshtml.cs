@@ -26,7 +26,11 @@ namespace SeatingChart.Pages.Students
         public string CurrentFilter { get; set; }
         public string CurrentSort { get; set; }
 
-        public PaginatedList<Student> Students { get; set; }
+        //  public PaginatedList<Student> Students { get; set; } 
+
+        public List<Student> Students { get; set; }
+
+        public int numCols { get; set;}
 
         public async Task OnGetAsync(string sortOrder,
             string currentFilter, string searchString, int? pageIndex)
@@ -58,14 +62,17 @@ namespace SeatingChart.Pages.Students
                     break;
     
                 default:
-                    studentsIQ = studentsIQ.OrderBy(s => s.LastName);
+                    studentsIQ = studentsIQ.OrderBy(s => s.LastName + " " + s.FirstName + " " + s.MiddleName); 
+            
                     break;
             } 
         
 
-            var pageSize = Configuration.GetValue("PageSize", 4);
-            Students = await PaginatedList<Student>.CreateAsync(
-                studentsIQ.AsNoTracking(), pageIndex ?? 1, pageSize);
+            // var pageSize = Configuration.GetValue("PageSize", 4);
+            // Students = await PaginatedList<Student>.CreateAsync(
+                // studentsIQ.AsNoTracking(), pageIndex ?? 1, pageSize);
+            Students = studentsIQ.ToList();
+            numCols = 7;
         }
     }
 }

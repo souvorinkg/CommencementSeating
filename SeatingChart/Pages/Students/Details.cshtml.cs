@@ -23,8 +23,17 @@ namespace SeatingChart.Pages.Students
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
+            if (id == null) {
+                return NotFound();
+            }
+            
+            //TODO: Set database stuff
+            
+            return RedirectToPage("./Index");
+            
             if (id == null)
-            {
+            { 
+                
                 return NotFound();
             }
 

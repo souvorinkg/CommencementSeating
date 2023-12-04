@@ -15,20 +15,46 @@
     <script src="https://cdn.syncfusion.com/ej2/17.1.43/dist/ej2.min.js"></script>
 </head>
 <body>
+     <style>
+    .wrapper {
+        display: grid;
+        grid-template-columns: repeat(@Model.numCols, 1fr);
+        gap: 10px;
+    }
+
+    .wrapper > div {
+        border: 2px solid #222;
+        border-radius: 3px;
+    }
+
+    .item {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+ </style>
     <script>
         var student_list = @Html.Raw(Json.Serialize(Model.Students));  
-        
-        
     </script>
-    <button id="addRowBtn">Add Row</button>
-    <button id="deleteRowBtn">Delete Row</button>
     <button id="addColumnBtn">Add Column</button>
     <button id="deleteColumnBtn">Delete Column</button>
-    <div id="Grid"></div>
 
-    <script>
-       
-    </script> 
+    <a href="/Students/Details/?id=@(Model.numCols + 1)">Inc</a>
+    <a href="/Students/Details/?id=@(Model.numCols - 1)">Dec</a>
+    
+    @*<div id="Grid"></div>*@
+
+    <div class="wrapper">
+        @foreach (var student in Model.Students) {
+            <div class="item">
+                @student.FirstName @student.MiddleName @student.LastName
+                <a href="/Students/Edit/?id=@student.ID">Edit</a>
+                <a href="/Students/Delete/?id=@student.ID">Delete</a>
+            </div>
+        }
+    </div>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

@@ -34,7 +34,7 @@ namespace SeatingChart.Pages.Students
 
             Student = await _context.Students
                 .AsNoTracking()
-                .FirstOrDefaultAsync(m => m.ID == id);
+                .FirstOrDefaultAsync(m => m.ID == (int)id);
 
             if (Student == null)
             {
