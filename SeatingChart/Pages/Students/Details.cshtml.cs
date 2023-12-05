@@ -21,19 +21,16 @@ namespace SeatingChart.Pages.Students
 
         public Student Student { get; set; } = default!;
 
+        private bool ConfigExists(int id)
+        {
+            return _context.Configurations.Any(e => e.ID == id);
+        }
+
         public async Task<IActionResult> OnGetAsync(int? id)
         {
-            if (id == null) {
-                return NotFound();
-            }
-            
-            //TODO: Set database stuff
-            
-            return RedirectToPage("./Index");
-            
             if (id == null)
-            { 
-                
+            {
+
                 return NotFound();
             }
 

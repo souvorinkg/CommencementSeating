@@ -4,8 +4,9 @@ using Microsoft.CodeAnalysis.Scripting;
 namespace SeatingChart.Models
 { 
     public class Configuration { 
-        int ID { get; set; }
-        int NumberofColumns { get; set; } 
-        
+        public int ID { get; set; }
+
+        [Display(Name ="Number Of Columns")]
+        public int NumberofColumns { get; set; } 
     }
 }

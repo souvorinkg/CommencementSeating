@@ -15,10 +15,12 @@ namespace SeatingChart.Data
         }
 
         public DbSet<Student> Students { get; set; }
+        public DbSet<Configuration> Configurations { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Student>().ToTable("Student");
+            modelBuilder.Entity<Configuration>().ToTable("Configuration");
         }
 
     }

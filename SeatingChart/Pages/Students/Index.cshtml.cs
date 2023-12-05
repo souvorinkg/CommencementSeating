@@ -67,12 +67,16 @@ namespace SeatingChart.Pages.Students
                     break;
             } 
         
+            var conf = from c in _context.Configurations select c;
+            numCols = 2;
+            if(await conf.AnyAsync()) {
+                numCols = (await conf.FirstAsync()).NumberofColumns;
+            }
 
             // var pageSize = Configuration.GetValue("PageSize", 4);
             // Students = await PaginatedList<Student>.CreateAsync(
                 // studentsIQ.AsNoTracking(), pageIndex ?? 1, pageSize);
             Students = studentsIQ.ToList();
-            numCols = 7;
         }
     }
 }

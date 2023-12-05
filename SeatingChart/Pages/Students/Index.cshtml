@@ -34,15 +34,17 @@
         justify-content: space-between;
     }
 
- </style>
-    <script>
-        var student_list = @Html.Raw(Json.Serialize(Model.Students));  
-    </script>
-    <button id="addColumnBtn">Add Column</button>
-    <button id="deleteColumnBtn">Delete Column</button>
+    .buttons {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+    }
 
-    <a href="/Students/Details/?id=@(Model.numCols + 1)">Inc</a>
-    <a href="/Students/Details/?id=@(Model.numCols - 1)">Dec</a>
+ </style>
+    
+    <a href="/Students/SetNumColumns/?num=@(Model.numCols + 1)">Add Column</a>
+    <a href="/Students/SetNumColumns/?num=@(Model.numCols - 1)">Remove Column</a>
     
     @*<div id="Grid"></div>*@
 
@@ -50,8 +52,10 @@
         @foreach (var student in Model.Students) {
             <div class="item">
                 @student.FirstName @student.MiddleName @student.LastName
-                <a href="/Students/Edit/?id=@student.ID">Edit</a>
-                <a href="/Students/Delete/?id=@student.ID">Delete</a>
+                <div class="buttons">
+                    <a href="/Students/Edit/?id=@student.ID">Edit</a>
+                    <a href="/Students/Delete/?id=@student.ID">Delete</a>
+                </div>
             </div>
         }
     </div>
