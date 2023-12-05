@@ -16,7 +16,7 @@
 </head>
 <body>
      <style>
-    .wrapper {
+    .wrapper { 
         display: grid;
         grid-template-columns: repeat(@Model.numCols, 1fr);
         gap: 10px;
@@ -44,11 +44,14 @@
  </style>
     
     <a href="/Students/SetNumColumns/?num=@(Model.numCols + 1)">Add Column</a>
-    <a href="/Students/SetNumColumns/?num=@(Model.numCols - 1)">Remove Column</a>
-    
-    @*<div id="Grid"></div>*@
+    <a href="/Students/SetNumColumns/?num=@(Model.numCols - 1)">Remove Column</a>   
+    <a asp-page="Create">Add Student</a>
 
-    <div class="wrapper">
+    
+    @*<div id="Grid"></div>*@ 
+
+    
+    <div class="wrapper">  
         @foreach (var student in Model.Students) {
             <div class="item">
                 @student.FirstName @student.MiddleName @student.LastName
