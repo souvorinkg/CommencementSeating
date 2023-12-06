@@ -2,10 +2,10 @@
 @model SeatingChart.Pages.Students.IndexModel
 
 @{
-    ViewData["Title"] = "Students";
+    ViewData["Title"] = "Seating Chart";
 }
 
-<h2>Students</h2>
+<h2>Seating Chart</h2>
 <html>
 <head>
     <title>Your GridView Example</title>
@@ -41,10 +41,22 @@
         justify-content: space-between;
     }
 
+    h4 {
+        text-align: center;
+    }
+
+    .btn-primary {
+        color: #fff;
+        background-color: #f5822a;
+        border-color: #f5822a;
+    }
+
  </style>
     
-    <a href="/Students/SetNumColumns/?num=@(Model.numCols + 1)">Add Column</a>
-    <a href="/Students/SetNumColumns/?num=@(Model.numCols - 1)">Remove Column</a>
+    <a class="btn btn-primary" href="/Students/SetNumColumns/?num=@(Model.numCols + 1)">Add Column</a>
+    <a class="btn btn-primary" href="/Students/SetNumColumns/?num=@(Model.numCols - 1)">Remove Column</a>
+
+    <h4>Front</h4>
     
     @*<div id="Grid"></div>*@
 
@@ -59,6 +71,8 @@
             </div>
         }
     </div>
+
+    <h4>Back</h4>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
