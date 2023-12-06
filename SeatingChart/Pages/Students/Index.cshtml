@@ -8,37 +8,45 @@
 <h2>Students</h2>
 <html>
 <head>
-    <title>Your GridView Example</title>
+    <title>Students</title>
     <link href="https://cdn.syncfusion.com/ej2/17.1.43/material.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdn.syncfusion.com/ej2/17.1.43/material.css"> 
     <script src="jquery-3.7.1.min.js"></script>
-    <script src="https://cdn.syncfusion.com/ej2/17.1.43/dist/ej2.min.js"></script>
+    <script src="https://cdn.syncfusion.com/ej2/17.1.43/dist/ej2.min.js"></script> 
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto">
+    <link href='https://fonts.googleapis.com/css?family=Merriweather' rel='stylesheet'>
 </head>
 <body>
      <style>
     .wrapper { 
         display: grid;
         grid-template-columns: repeat(@Model.numCols, 1fr);
-        gap: 10px;
+        gap: 10px;  
     }
 
     .wrapper > div {
         border: 2px solid #222;
-        border-radius: 3px;
+        border-radius: 3px; 
+        font-family: 'Merriweather', light;
     }
 
     .item {
         display: flex;
         flex-direction: row;
         align-items: center;
-        justify-content: space-between;
+        justify-content: space-between;  
     }
 
     .buttons {
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: space-between;
+        justify-content: space-between;  
+        @* box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem orange;    *@
+        font-family: 'Merriweather', light; 
+    
+
+
     }
 
  </style>

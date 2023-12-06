@@ -1,29 +1,35 @@
 html {
-  font-size: 14px;
+  font-size: 28px;  
+  font-family:'Merriweather', light; 
 }
 
 @media (min-width: 768px) {
-  html {
-    font-size: 16px;
+  html { 
+    font-size: 16px; 
+
   }
 }
 
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem orange;  
+  
 }
 
 html {
   position: relative;
-  min-height: 100%;
+  min-height: 100%;  
+  font-family: 'Merriweather', light;
 }
 
-body {
-  margin-bottom: 60px;
+body { 
+  
+  margin-bottom: 60px; 
+  font-family: 'Merriweather', light; 
 } 
 
 chart 
 {
   display: grid;
-  grid-template-columns: repeat(7, 1fr);
+  grid-template-columns: repeat(7, 1fr); 
 
 }

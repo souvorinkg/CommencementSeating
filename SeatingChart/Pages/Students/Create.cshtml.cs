@@ -27,9 +27,12 @@ namespace SeatingChart.Pages.Students
         [BindProperty]
         public Student Student { get; set; } = default!;
 
-        // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
+        
         public async Task<IActionResult> OnPostAsync()
         {
+            
+            
+            
             var emptyStudent = new Student();
 
             if (await TryUpdateModelAsync<Student>(
