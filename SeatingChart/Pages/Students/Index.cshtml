@@ -22,7 +22,8 @@
         display: grid;
         grid-template-columns: repeat(@Model.numCols, 1fr);
         gap: 10px;  
-        overflow: scroll;
+        @* overflow: scroll;  *@
+        object-fit: cover;
     }
 
     .wrapper > div {
