@@ -2,10 +2,10 @@
 @model SeatingChart.Pages.Students.IndexModel
 
 @{
-    ViewData["Title"] = "Students";
+    ViewData["Title"] = "Primary Seating Chart";
 }
 
-<h2>Students</h2>
+<h2>Seating Chart</h2>
 <html>
 <head>
     <title>Students</title>
@@ -22,6 +22,7 @@
         display: grid;
         grid-template-columns: repeat(@Model.numCols, 1fr);
         gap: 10px;  
+        overflow: scroll;
     }
 
     .wrapper > div {
@@ -49,17 +50,34 @@
 
     }
 
+    h4 {
+        text-align: center;
+    }
+
+    .btn-primary {
+        color: #fff;
+        background-color: #f5822a;
+        border-color: #f5822a;
+    }
  </style>
     
-    <a href="/Students/SetNumColumns/?num=@(Model.numCols + 1)">Add Column</a>
-    <a href="/Students/SetNumColumns/?num=@(Model.numCols - 1)">Remove Column</a>   
-    <a asp-page="Create">Add Student</a>
+    @* <a class="btn btn-primary" href="/Students/SetNumColumns/?num=@(Model.numCols + 1)">Add Column</a>
+    <a class="btn btn-primary" href="/Students/SetNumColumns/?num=@(Model.numCols - 1)">Remove Column</a> *@
+
+    <a class="btn btn-primary" asp-page="SetNumColumns" asp-route-num="@(Model.numCols + 1)">Add Column</a>
+    <a class="btn btn-primary" asp-page="SetNumColumns" asp-route-num="@(Model.numCols - 1)">Remove Column</a>
+    <a class="btn btn-primary" asp-page="Create">Add Student</a>
+    <a class="btn btn-primary" asp-page="DeleteAll">DELETE ALL</a>
+
+    <h4>Front</h4>
+    
+    @*<div id="Grid"></div>*@
 
     
     @*<div id="Grid"></div>*@ 
 
     
-    <div class="wrapper">  
+    <div class="wrapper">        
         @foreach (var student in Model.Students) {
             <div class="item">
                 @student.FirstName @student.MiddleName @student.LastName
@@ -70,6 +88,8 @@
             </div>
         }
     </div>
+
+    <h4>Back</h4>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

@@ -21,8 +21,8 @@ namespace SeatingChart.Models
          public string LastName { get; set; }    
 
 
-        [Display(Name = "Please Enter Full Names")]
-         public string FullName { get { return FirstName + " " + MiddleName + " " + LastName; } }
+        // [Display(Name = "Please Enter Full Names")]
+        // public string FullName { get { return FirstName + " " + MiddleName + " " + LastName; } }
         
     }
 }

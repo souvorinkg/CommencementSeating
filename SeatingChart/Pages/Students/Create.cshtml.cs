@@ -25,26 +25,46 @@ namespace SeatingChart.Pages.Students
         }
 
         [BindProperty]
+        public String namesInput { get; set; } = default!;
+
+        [BindProperty]
         public Student Student { get; set; } = default!;
 
-        
         public async Task<IActionResult> OnPostAsync()
         {
-            
-            
-            
-            var emptyStudent = new Student();
-
-            if (await TryUpdateModelAsync<Student>(
-                emptyStudent,
-                "student",   // Prefix for form value.
-                s => s.FirstName, s => s.MiddleName, s => s.LastName))
+            // Check if namesInput is not empty
+            if (!string.IsNullOrWhiteSpace(namesInput))
             {
-                _context.Students.Add(emptyStudent);
+                // Split the input into an array of names 
+                Console.Write(namesInput);
+                string[] namesArray = namesInput.Split('\n', StringSplitOptions.RemoveEmptyEntries);
+
+                foreach (var name in namesArray)
+                {
+                    var nameParts = name.Trim().Split(' ');
+
+                    var newStudent = new Student
+                    {
+                        FirstName = nameParts[0],
+
+                        MiddleName = nameParts.Length >= 3
+                            ? nameParts.Skip(1).Take(nameParts.Length - 2).Aggregate((x, y) => x + " " + y)
+                            : "",
+
+                        LastName = nameParts.Length >= 2
+                            ? nameParts.Last()
+                            : ""
+                    };
+
+                    _context.Students.Add(newStudent);
+                }
+
                 await _context.SaveChangesAsync();
                 return RedirectToPage("./Index");
             }
 
+            // Handle case where namesInput is empty
+            ModelState.AddModelError("namesInput", "Please provide a list of names.");
             return Page();
         }
     }
