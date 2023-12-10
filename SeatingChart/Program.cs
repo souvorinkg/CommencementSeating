@@ -3,6 +3,8 @@ using Microsoft.Extensions.DependencyInjection;
 using SeatingChart.Data;
 var builder = WebApplication.CreateBuilder(args);
 
+//Thread.Sleep(1000 * 60 * 5);
+
 // Add services to the container.
 builder.Services.AddRazorPages();
 // builder.Services.AddDbContext<ChartContext>(options =>
