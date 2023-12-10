@@ -8046,26 +8046,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\noahc\\.nuget\\packages\\": {}
+    "C:\\Users\\colte\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\noahc\\OneDrive\\Desktop\\Database and Websystems\\RazorPagesCommencement\\SeatingChart\\SeatingChart.csproj",
+      "projectUniqueName": "C:\\Users\\colte\\CSCI23-24\\RazorPagesCommencement\\SeatingChart\\SeatingChart.csproj",
       "projectName": "SeatingChart",
-      "projectPath": "C:\\Users\\noahc\\OneDrive\\Desktop\\Database and Websystems\\RazorPagesCommencement\\SeatingChart\\SeatingChart.csproj",
-      "packagesPath": "C:\\Users\\noahc\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\noahc\\OneDrive\\Desktop\\Database and Websystems\\RazorPagesCommencement\\SeatingChart\\obj\\",
+      "projectPath": "C:\\Users\\colte\\CSCI23-24\\RazorPagesCommencement\\SeatingChart\\SeatingChart.csproj",
+      "packagesPath": "C:\\Users\\colte\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\colte\\CSCI23-24\\RazorPagesCommencement\\SeatingChart\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\noahc\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\colte\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
