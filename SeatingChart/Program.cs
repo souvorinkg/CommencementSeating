@@ -1,4 +1,3 @@
-using ContosoUniversity.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using SeatingChart.Data;
@@ -6,8 +5,11 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+// builder.Services.AddDbContext<ChartContext>(options =>
+//     options.UseSqlite(builder.Configuration.GetConnectionString("ChartContext") ?? throw new InvalidOperationException("Connection string 'ChartContext' not found.")));
+
 builder.Services.AddDbContext<ChartContext>(options =>
-    options.UseSqlite(builder.Configuration.GetConnectionString("ChartContext") ?? throw new InvalidOperationException("Connection string 'ChartContext' not found.")));
+    options.UseSqlServer(builder.Configuration.GetConnectionString("AZURE_POSTGRESQL_CONNECTIONSTRING")));
 
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
@@ -22,7 +24,7 @@ else
 {
     app.UseDeveloperExceptionPage();
     app.UseMigrationsEndPoint();
-} 
+}
 
 using (var scope = app.Services.CreateScope())
 {

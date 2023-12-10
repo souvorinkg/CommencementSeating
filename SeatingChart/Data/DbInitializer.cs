@@ -2,7 +2,7 @@ using SeatingChart.Models;
 using SeatingChart.Data;
 using Microsoft.AspNetCore.Mvc;
 
-namespace ContosoUniversity.Data
+namespace SeatingChart.Data
 {
     public static class DbInitializer
     {
