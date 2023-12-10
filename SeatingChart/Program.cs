@@ -11,7 +11,7 @@ builder.Services.AddRazorPages();
 //     options.UseSqlite(builder.Configuration.GetConnectionString("ChartContext") ?? throw new InvalidOperationException("Connection string 'ChartContext' not found.")));
 
 builder.Services.AddDbContext<ChartContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("AZURE_POSTGRESQL_CONNECTIONSTRING")));
+    options.UseSqlServer(builder.Configuration.GetConnectionString("A")));
 
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
@@ -35,19 +35,19 @@ using (var scope = app.Services.CreateScope())
     var context = services.GetRequiredService<ChartContext>();
     //context.Database.EnsureCreated();
 
-    for (; ; )
-    {
-        try
-        {
+    // for (; ; )
+    // {
+    //     try
+    //     {
             DbInitializer.Initialize(context);
-            break;
-        }
-        catch (Exception ex)
-        {
-            Console.WriteLine(ex.Message);
-            Thread.Sleep(1000*10);
-        }
-    }
+    //         break;
+    //     }
+    //     catch (Exception ex)
+    //     {
+    //         Console.WriteLine(ex.Message);
+    //         Thread.Sleep(1000*10);
+    //     }
+    // }
 }
 
 app.UseHttpsRedirection();
