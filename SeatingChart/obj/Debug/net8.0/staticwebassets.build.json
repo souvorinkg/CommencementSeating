@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "wWD3pYW8qBCsQgHYoHbvSqYfl+rd7YZBHkAbJwV+OH0=",
+  "Hash": "me4XdtFn55aEUppp3BvGsECUAmSelt4xiQew2jODTEE=",
   "Source": "SeatingChart",
   "BasePath": "_content/SeatingChart",
   "Mode": "Default",
@@ -91,6 +91,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\noahc\\OneDrive\\Desktop\\Database and Websystems\\RazorPagesCommencement\\SeatingChart\\wwwroot\\hendrix.ico",
+      "SourceId": "SeatingChart",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\noahc\\OneDrive\\Desktop\\Database and Websystems\\RazorPagesCommencement\\SeatingChart\\wwwroot\\",
+      "BasePath": "_content/SeatingChart",
+      "RelativePath": "hendrix.ico",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\hendrix.ico"
     },
     {
       "Identity": "C:\\Users\\noahc\\OneDrive\\Desktop\\Database and Websystems\\RazorPagesCommencement\\SeatingChart\\wwwroot\\js\\site.js",

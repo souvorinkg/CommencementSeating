@@ -277,3 +277,6 @@ C:\Users\noahc\OneDrive\Desktop\Database and Websystems\RazorPagesCommencement\S
 C:\Users\noahc\OneDrive\Desktop\Database and Websystems\RazorPagesCommencement\SeatingChart\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Drawing.Common.dll
 C:\Users\noahc\OneDrive\Desktop\Database and Websystems\RazorPagesCommencement\SeatingChart\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\noahc\OneDrive\Desktop\Database and Websystems\RazorPagesCommencement\SeatingChart\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Windows.Extensions.dll
+C:\Users\noahc\OneDrive\Desktop\Database and Websystems\RazorPagesCommencement\SeatingChart\bin\Debug\net8.0\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\noahc\OneDrive\Desktop\Database and Websystems\RazorPagesCommencement\SeatingChart\bin\Debug\net8.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+C:\Users\noahc\OneDrive\Desktop\Database and Websystems\RazorPagesCommencement\SeatingChart\bin\Debug\net8.0\Newtonsoft.Json.Bson.dll

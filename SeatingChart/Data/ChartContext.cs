@@ -9,16 +9,19 @@ namespace SeatingChart.Data
 {
     public class ChartContext : DbContext
     {
-        public ChartContext (DbContextOptions<ChartContext> options)
+        public ChartContext(DbContextOptions<ChartContext> options)
             : base(options)
         {
         }
 
- public DbSet<Student> Students { get; set; }
+        public DbSet<Student> Students { get; set; }
+        public DbSet<Configuration> Configurations { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Student>().ToTable("Student");
+            modelBuilder.Entity<Configuration>().ToTable("Configuration");
         }
+
     }
 }

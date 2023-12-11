@@ -13,6 +13,10 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\noahc\\OneDrive\\Desktop\\Database and Websystems\\RazorPagesCommencement\\SeatingChart\\wwwroot\\hendrix.ico",
+      "PackagePath": "staticwebassets\\hendrix.ico"
+    },
+    {
       "Id": "C:\\Users\\noahc\\OneDrive\\Desktop\\Database and Websystems\\RazorPagesCommencement\\SeatingChart\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
