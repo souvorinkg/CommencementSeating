@@ -7,8 +7,12 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddRazorPages();
 builder.Services.AddDbContext<ChartContext>(options =>
-    options.UseSqlite(builder.Configuration.GetConnectionString("ChartContext") ?? throw new InvalidOperationException("Connection string 'ChartContext' not found.")));
-
+    options.UseSqlite(builder.Configuration.GetConnectionString("AZURE_SQL_CONNECTIONSTRING") ?? throw new InvalidOperationException("Connection string 'ChartContext' not found.")));
+builder.Services.AddStackExchangeRedisCache(options =>
+{
+options.Configuration = builder.Configuration["AZURE_REDIS_CONNECTIONSTRING"];
+options.InstanceName = "SampleInstance";
+});
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
 var app = builder.Build();
