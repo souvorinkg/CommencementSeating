@@ -1,4 +1,4 @@
-using ContosoUniversity.Data;
+
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using SeatingChart.Data;
@@ -29,7 +29,7 @@ using (var scope = app.Services.CreateScope())
     var services = scope.ServiceProvider;
 
     var context = services.GetRequiredService<ChartContext>();
-    context.Database.EnsureCreated();
+    //context.Database.EnsureCreated();
     DbInitializer.Initialize(context);
 }
 

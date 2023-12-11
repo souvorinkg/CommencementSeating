@@ -50,6 +50,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3R1ZGVudHNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/colte/CSCI23-24/RazorPagesCommencement/SeatingChart/Pages/Students/DeleteAll.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3R1ZGVudHNcRGVsZXRlQWxsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/colte/CSCI23-24/RazorPagesCommencement/SeatingChart/Pages/Students/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3R1ZGVudHNcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -60,6 +64,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/colte/CSCI23-24/RazorPagesCommencement/SeatingChart/Pages/Students/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3R1ZGVudHNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/colte/CSCI23-24/RazorPagesCommencement/SeatingChart/Pages/Students/SetNumColumns.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3R1ZGVudHNcU2V0TnVtQ29sdW1ucy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/colte/CSCI23-24/RazorPagesCommencement/SeatingChart/Pages/_ViewImports.cshtml]
