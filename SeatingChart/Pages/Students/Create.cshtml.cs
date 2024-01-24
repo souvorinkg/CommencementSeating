@@ -36,8 +36,13 @@ namespace SeatingChart.Pages.Students
             if (!string.IsNullOrWhiteSpace(namesInput))
             {
                 // Split the input into an array of names 
+
+                // this shoudl be three buttons, instead of one button being split into 3 names. 
                 Console.Write(namesInput);
                 string[] namesArray = namesInput.Split('\n', StringSplitOptions.RemoveEmptyEntries);
+                Console.Write(Student.FirstName);
+                Console.Write(Student.MiddleName);
+                Console.Write(Student.LastName);
 
                 foreach (var name in namesArray)
                 {

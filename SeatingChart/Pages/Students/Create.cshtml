@@ -4,8 +4,9 @@
 @{
     ViewData["Title"] = "Create";
 }
-
+<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 <h1>Adding</h1>
+
 
 <style>
     .btn-primary {
@@ -15,14 +16,17 @@
     }
 </style>
 
-<h4>Copy and paste all students you want to add:</h4>
+<h4>Copy and paste all students you want to add:
+
+</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="namesInput" class="control-label" ></label>
+                <label asp-for="namesInput" class="control-label" > Enter Names Here in one of two formats: <br> FIRST + LAST <br>
+    FIRST + MIDDLE + LAST</label>
                 <textarea asp-for="namesInput" class="form-control" rows="15"></textarea>
                 <span asp-validation-for="namesInput" class="text-danger"></span>
             </div>

@@ -29,6 +29,8 @@ namespace SeatingChart.Pages.Students
                 ErrorMessage = "Delete All failed. Try again";
             }
 
+            await Task.CompletedTask; // Add 'await' operator to make the method asynchronous
+
             return Page();
         }
 
