@@ -72,5 +72,18 @@ namespace SeatingChart.Pages.Students
             ModelState.AddModelError("namesInput", "Please provide a list of names.");
             return Page();
         }
+
+        public async Task<IActionResult> OnPostAddSingleStudentAsync()
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Students.Add(Student);
+                await _context.SaveChangesAsync();
+
+                return RedirectToPage("./Index");
+            }
+
+            return Page();
+        }
     }
 }

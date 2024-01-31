@@ -27,7 +27,7 @@
     .wrapper { 
         display: grid;
         grid-template-columns: repeat(@Model.numCols, 1fr);
-        gap: 10px;  
+        gap: 5px;  
         @* overflow: scroll;  *@
         object-fit: cover;
         @* justify-content: center; *@
@@ -36,15 +36,21 @@
     .wrapper > div {
         border: 2px solid #222;
         border-radius: 3px; 
-        font-family: 'Merriweather', light;
+        font-family: 'Merriweather';
     }
 
     .item {
+        padding: 5px;
         display: flex;
         flex-direction: row;
         align-items: center;
         justify-content: space-between;  
     }
+
+    .name {
+    display: flex;
+    flex-direction: column; /* Add this line */
+}
 
     .buttons {
         display: flex;
@@ -57,6 +63,7 @@
 
 
     }
+    
 
     h4 {
         text-align: center;
@@ -67,6 +74,15 @@
         background-color: #f5822a;
         border-color: #f5822a;
     }
+    div.last-name {
+        font-size: 16px;
+
+    }
+    div.first-middle-name {
+        font-size: 14px;
+
+    }
+    
  </style>
 <body>
     
@@ -77,6 +93,7 @@
     <a class="btn btn-primary" asp-page="SetNumColumns" asp-route-num="@(Model.numCols - 1)">Remove Column</a>
     <a class="btn btn-primary" asp-page="Create">Add Student</a>
     <a class="btn btn-primary" asp-page="DeleteAll">Delete All</a>
+   
 
     <h4>Front</h4>
     
@@ -89,14 +106,19 @@
  <div class="wrapper">        
     @foreach (var student in Model.Students) {
         <div class="item">
-            <div class="name">
-                @student.FirstName @student.LastName
-            </div>
-            <div class="buttons">
-                <a href="/Students/Edit/?id=@student.ID"><i class="fas fa-edit"></i></a>
-                <a href="/Students/Delete/?id=@student.ID"><i class="fas fa-trash-alt"></i></a>
-            </div>
+    <div class="name">
+        <div class="first-middle-name">
+            @student.FirstName @student.MiddleName
         </div>
+        <div class="last-name">
+            @student.LastName
+        </div>
+    </div>
+        <div class="buttons">
+            <a href="/Students/Edit/?id=@student.ID"><i class="fas fa-edit"></i></a>
+            <a href="/Students/Delete/?id=@student.ID"><i class="fas fa-trash-alt"></i></a>
+        </div>
+    </div>
     }
 </div>
 

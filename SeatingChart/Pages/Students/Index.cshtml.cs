@@ -78,5 +78,6 @@ namespace SeatingChart.Pages.Students
                 // studentsIQ.AsNoTracking(), pageIndex ?? 1, pageSize);
             Students = studentsIQ.ToList();
         }
+
     }
 }
