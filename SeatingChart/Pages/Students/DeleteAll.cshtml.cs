@@ -22,8 +22,11 @@ namespace SeatingChart.Pages.Students
         }
         public string ErrorMessage { get; set; }
 
-        public async Task<IActionResult> OnGetAsync(bool? saveChangesError = false)
+        public int? ChartNum {get;set;}
+
+        public async Task<IActionResult> OnGetAsync(int? chartNum ,bool? saveChangesError = false)
         {
+            ChartNum = chartNum;
             if (saveChangesError.GetValueOrDefault())
             {
                 ErrorMessage = "Delete All failed. Try again";
@@ -38,7 +41,7 @@ namespace SeatingChart.Pages.Students
             {
                 _context.Students.RemoveRange(_context.Students);
                 await _context.SaveChangesAsync();
-                return RedirectToPage("./Index");
+                return RedirectToPage("./Index", new{chartNum = ChartNum.ToString()});
             }
             catch (DbUpdateException ex)
             {

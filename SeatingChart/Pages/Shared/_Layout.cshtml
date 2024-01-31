@@ -25,16 +25,13 @@
                         @* <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
                         </li>  *@
-                          <li class="nav-item">
-                            <a class="nav-link text-light" asp-area="" asp-page="/Students/Index">Charts</a>
+                        <li class="nav-item">
+                            <a class="nav-link text-light" asp-area="" asp-page="/Students/Index" asp-route-chartNum="1">Primary Chart</a>
                         </li> 
-                          @* <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/PrimaryChart/Index">Primary Chart</a>
+                        <li class="nav-item">
+                            <a class="nav-link text-light" asp-area="" asp-page="/Students/Index" asp-route-chartNum="2">Secondary Chart</a>
                         </li> 
-                          <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Secondary/Index">Secondary Chart</a>
-                        </li>
-                    </ul> *@
+                    </ul>
                 </div>
             </div>
         </nav>

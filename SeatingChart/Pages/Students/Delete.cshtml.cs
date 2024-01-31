@@ -24,9 +24,12 @@ namespace SeatingChart.Pages.Students
         [BindProperty]
         public Student Student { get; set; }
         public string ErrorMessage { get; set; }
+        public int? ChartNum {get;set;}
 
-        public async Task<IActionResult> OnGetAsync(int? id, bool? saveChangesError = false)
+        public async Task<IActionResult> OnGetAsync(int? id,int? chartNum, bool? saveChangesError = false)
         {
+            ChartNum = chartNum;
+
             if (id == null)
             {
                 return NotFound();
@@ -67,7 +70,7 @@ namespace SeatingChart.Pages.Students
             {
                 _context.Students.Remove(student);
                 await _context.SaveChangesAsync();
-                return RedirectToPage("./Index");
+                return RedirectToPage("./Index", new{chartNum = ChartNum.ToString()});
             }
             catch (DbUpdateException ex)
             {

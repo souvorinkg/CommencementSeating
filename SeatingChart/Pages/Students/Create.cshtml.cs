@@ -19,8 +19,11 @@ namespace SeatingChart.Pages.Students
             _context = context;
         }
 
-        public IActionResult OnGet()
+        public int? ChartNum {get;set;}
+
+        public IActionResult OnGet(int? chartNum)
         {
+            ChartNum = chartNum;
             return Page();
         }
 
@@ -60,7 +63,7 @@ namespace SeatingChart.Pages.Students
                 }
 
                 await _context.SaveChangesAsync();
-                return RedirectToPage("./Index");
+                return RedirectToPage("./Index", new{chartNum = ChartNum.ToString()});
             }
 
             // Handle case where namesInput is empty

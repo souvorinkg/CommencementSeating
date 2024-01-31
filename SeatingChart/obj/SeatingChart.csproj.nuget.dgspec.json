@@ -1,25 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\colte\\CSCI23-24\\RazorPagesCommencement\\SeatingChart\\SeatingChart.csproj": {}
+    "C:\\Users\\matth\\Desktop\\Disco Tray\\Commencement\\CommencementSeating\\SeatingChart\\SeatingChart.csproj": {}
   },
   "projects": {
-    "C:\\Users\\colte\\CSCI23-24\\RazorPagesCommencement\\SeatingChart\\SeatingChart.csproj": {
+    "C:\\Users\\matth\\Desktop\\Disco Tray\\Commencement\\CommencementSeating\\SeatingChart\\SeatingChart.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\colte\\CSCI23-24\\RazorPagesCommencement\\SeatingChart\\SeatingChart.csproj",
+        "projectUniqueName": "C:\\Users\\matth\\Desktop\\Disco Tray\\Commencement\\CommencementSeating\\SeatingChart\\SeatingChart.csproj",
         "projectName": "SeatingChart",
-        "projectPath": "C:\\Users\\colte\\CSCI23-24\\RazorPagesCommencement\\SeatingChart\\SeatingChart.csproj",
-        "packagesPath": "C:\\Users\\colte\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\colte\\CSCI23-24\\RazorPagesCommencement\\SeatingChart\\obj\\",
+        "projectPath": "C:\\Users\\matth\\Desktop\\Disco Tray\\Commencement\\CommencementSeating\\SeatingChart\\SeatingChart.csproj",
+        "packagesPath": "C:\\Users\\matth\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\matth\\Desktop\\Disco Tray\\Commencement\\CommencementSeating\\SeatingChart\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\colte\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\matth\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -90,7 +92,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
