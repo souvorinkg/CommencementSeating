@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/kolyasouvorin/Downloads/Commencement/CommencementSeating/SeatingChart/SeatingChart.csproj": {}
+    "/Users/kolyasouvorin/Desktop/DiscoTray/Commence2/SeatingChart/SeatingChart.csproj": {}
   },
   "projects": {
-    "/Users/kolyasouvorin/Downloads/Commencement/CommencementSeating/SeatingChart/SeatingChart.csproj": {
+    "/Users/kolyasouvorin/Desktop/DiscoTray/Commence2/SeatingChart/SeatingChart.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/kolyasouvorin/Downloads/Commencement/CommencementSeating/SeatingChart/SeatingChart.csproj",
+        "projectUniqueName": "/Users/kolyasouvorin/Desktop/DiscoTray/Commence2/SeatingChart/SeatingChart.csproj",
         "projectName": "SeatingChart",
-        "projectPath": "/Users/kolyasouvorin/Downloads/Commencement/CommencementSeating/SeatingChart/SeatingChart.csproj",
+        "projectPath": "/Users/kolyasouvorin/Desktop/DiscoTray/Commence2/SeatingChart/SeatingChart.csproj",
         "packagesPath": "/Users/kolyasouvorin/.nuget/packages/",
-        "outputPath": "/Users/kolyasouvorin/Downloads/Commencement/CommencementSeating/SeatingChart/obj/",
+        "outputPath": "/Users/kolyasouvorin/Desktop/DiscoTray/Commence2/SeatingChart/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/kolyasouvorin/.nuget/NuGet/NuGet.Config"
@@ -98,7 +98,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.101/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/Users/kolyasouvorin/.vscode-dotnet-sdk/.dotnet/sdk/8.0.100/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

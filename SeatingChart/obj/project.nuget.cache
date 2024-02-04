@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "aUsEVFoUVZBhm1FXRF4MDpSzOSG1v/Qp36leAXfu7HvX3r0Esk1f5tpdki/qT1a9fWNsGizqIzadnckHS/lgPg==",
+  "dgSpecHash": "nhMMjfCkJrZeBEXNIVY08qar5NdYF2eMfgFjFRKGEfRVhrZ2zR+bUqL6IqWhC3ShFvy+Nsu+mXDRCkpYbB0oQg==",
   "success": true,
-  "projectFilePath": "/Users/kolyasouvorin/Downloads/Commencement/CommencementSeating/SeatingChart/SeatingChart.csproj",
+  "projectFilePath": "/Users/kolyasouvorin/Desktop/DiscoTray/Commence2/SeatingChart/SeatingChart.csproj",
   "expectedPackageFiles": [
     "/Users/kolyasouvorin/.nuget/packages/azure.core/1.25.0/azure.core.1.25.0.nupkg.sha512",
     "/Users/kolyasouvorin/.nuget/packages/azure.identity/1.7.0/azure.identity.1.7.0.nupkg.sha512",

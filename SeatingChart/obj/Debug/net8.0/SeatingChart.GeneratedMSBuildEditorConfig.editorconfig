@@ -17,67 +17,67 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = SeatingChart
 build_property.RootNamespace = SeatingChart
-build_property.ProjectDir = /Users/kolyasouvorin/Downloads/Commencement/CommencementSeating/SeatingChart/
+build_property.ProjectDir = /Users/kolyasouvorin/Desktop/DiscoTray/Commence2/SeatingChart/
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = /Users/kolyasouvorin/Downloads/Commencement/CommencementSeating/SeatingChart
+build_property.MSBuildProjectDirectory = /Users/kolyasouvorin/Desktop/DiscoTray/Commence2/SeatingChart
 build_property._RazorSourceGeneratorDebug = 
 
-[/Users/kolyasouvorin/Downloads/Commencement/CommencementSeating/SeatingChart/Pages/Error.cshtml]
+[/Users/kolyasouvorin/Desktop/DiscoTray/Commence2/SeatingChart/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/kolyasouvorin/Downloads/Commencement/CommencementSeating/SeatingChart/Pages/Index.cshtml]
+[/Users/kolyasouvorin/Desktop/DiscoTray/Commence2/SeatingChart/Pages/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/kolyasouvorin/Downloads/Commencement/CommencementSeating/SeatingChart/Pages/Privacy.cshtml]
+[/Users/kolyasouvorin/Desktop/DiscoTray/Commence2/SeatingChart/Pages/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvUHJpdmFjeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/kolyasouvorin/Downloads/Commencement/CommencementSeating/SeatingChart/Pages/Shared/_ValidationScriptsPartial.cshtml]
+[/Users/kolyasouvorin/Desktop/DiscoTray/Commence2/SeatingChart/Pages/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvU2hhcmVkL19WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/kolyasouvorin/Downloads/Commencement/CommencementSeating/SeatingChart/Pages/Students/Create.cshtml]
+[/Users/kolyasouvorin/Desktop/DiscoTray/Commence2/SeatingChart/Pages/Students/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvU3R1ZGVudHMvQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/kolyasouvorin/Downloads/Commencement/CommencementSeating/SeatingChart/Pages/Students/Delete.cshtml]
+[/Users/kolyasouvorin/Desktop/DiscoTray/Commence2/SeatingChart/Pages/Students/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvU3R1ZGVudHMvRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/kolyasouvorin/Downloads/Commencement/CommencementSeating/SeatingChart/Pages/Students/DeleteAll.cshtml]
+[/Users/kolyasouvorin/Desktop/DiscoTray/Commence2/SeatingChart/Pages/Students/DeleteAll.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvU3R1ZGVudHMvRGVsZXRlQWxsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/kolyasouvorin/Downloads/Commencement/CommencementSeating/SeatingChart/Pages/Students/Details.cshtml]
+[/Users/kolyasouvorin/Desktop/DiscoTray/Commence2/SeatingChart/Pages/Students/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvU3R1ZGVudHMvRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/kolyasouvorin/Downloads/Commencement/CommencementSeating/SeatingChart/Pages/Students/Edit.cshtml]
+[/Users/kolyasouvorin/Desktop/DiscoTray/Commence2/SeatingChart/Pages/Students/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvU3R1ZGVudHMvRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/kolyasouvorin/Downloads/Commencement/CommencementSeating/SeatingChart/Pages/Students/Index.cshtml]
+[/Users/kolyasouvorin/Desktop/DiscoTray/Commence2/SeatingChart/Pages/Students/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvU3R1ZGVudHMvSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/kolyasouvorin/Downloads/Commencement/CommencementSeating/SeatingChart/Pages/Students/SetNumColumns.cshtml]
+[/Users/kolyasouvorin/Desktop/DiscoTray/Commence2/SeatingChart/Pages/Students/SetNumColumns.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvU3R1ZGVudHMvU2V0TnVtQ29sdW1ucy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/kolyasouvorin/Downloads/Commencement/CommencementSeating/SeatingChart/Pages/_ViewImports.cshtml]
+[/Users/kolyasouvorin/Desktop/DiscoTray/Commence2/SeatingChart/Pages/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/kolyasouvorin/Downloads/Commencement/CommencementSeating/SeatingChart/Pages/_ViewStart.cshtml]
+[/Users/kolyasouvorin/Desktop/DiscoTray/Commence2/SeatingChart/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/kolyasouvorin/Downloads/Commencement/CommencementSeating/SeatingChart/Pages/Shared/_Layout.cshtml]
+[/Users/kolyasouvorin/Desktop/DiscoTray/Commence2/SeatingChart/Pages/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvU2hhcmVkL19MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-s5pgv4eyiw
