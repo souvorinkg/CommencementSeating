@@ -20,7 +20,7 @@
      <style>
     .wrapper { 
         display: grid;
-        grid-template-columns: repeat(@Model.numCols, 1fr);
+        grid-template-columns: repeat(@(Model.numCols), 1fr);
         gap: 10px;  
         @* overflow: scroll;  *@
         object-fit: cover;
@@ -66,10 +66,10 @@
     @* <a class="btn btn-primary" href="/Students/SetNumColumns/?num=@(Model.numCols + 1)">Add Column</a>
     <a class="btn btn-primary" href="/Students/SetNumColumns/?num=@(Model.numCols - 1)">Remove Column</a> *@
 
-    <a class="btn btn-primary" asp-page="SetNumColumns" asp-route-num="@(Model.numCols + 1)">Add Column</a>
-    <a class="btn btn-primary" asp-page="SetNumColumns" asp-route-num="@(Model.numCols - 1)">Remove Column</a>
-    <a class="btn btn-primary" asp-page="Create">Add Student</a>
-    <a class="btn btn-primary" asp-page="DeleteAll">Delete All</a>
+    <a class="btn btn-primary" asp-page="SetNumColumns" asp-route-num="@(Model.numCols + 1)" asp-route-chartNum="@(Model.ChartNum)">Add Column</a>
+    <a class="btn btn-primary" asp-page="SetNumColumns" asp-route-num="@(Model.numCols - 1)" asp-route-chartNum="@(Model.ChartNum)">Remove Column</a>
+    <a class="btn btn-primary" asp-page="Create" asp-route-chartNum="@(Model.ChartNum)">Add Student</a>
+    <a class="btn btn-primary" asp-page="DeleteAll" asp-route-chartNum="@(Model.ChartNum)">Delete All</a>
 
     <h4>Front</h4>
     
@@ -79,13 +79,13 @@
     @*<div id="Grid"></div>*@ 
 
     
-    <div class="wrapper">        
+    <div class="wrapper">  
         @foreach (var student in Model.Students) {
             <div class="item">
                 @student.FirstName @student.MiddleName @student.LastName
                 <div class="buttons">
-                    <a href="/Students/Edit/?id=@student.ID">Edit</a>
-                    <a href="/Students/Delete/?id=@student.ID">Delete</a>
+                    <a href="/Students/Edit/?id=@student.ID&chartNum=@Model.ChartNum">Edit</a>
+                    <a href="/Students/Delete/?id=@student.ID&chartNum=@Model.ChartNum">Delete</a>
                 </div>
             </div>
         }

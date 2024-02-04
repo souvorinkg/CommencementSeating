@@ -23,7 +23,7 @@ namespace SeatingChart.Pages.Students
             return _context.Configurations.Any(e => e.ID == id);
         }
 
-        public async Task<IActionResult> OnGetAsync(int? num)
+        public async Task<IActionResult> OnGetAsync(int? num, int? chartNum)
         {
             if (num == null)
             {
@@ -32,10 +32,10 @@ namespace SeatingChart.Pages.Students
 
             if (!ModelState.IsValid)
             {
-                return RedirectToPage("./Index");
+                return RedirectToPage("./Index", chartNum);
             }
                         
-            var conf = from c in _context.Configurations select c;
+            var conf = from c in _context.Configurations.Where(c => c.ID == chartNum) select c;
             if (await conf.AnyAsync())
             {
                 var config = await conf.FirstAsync();
@@ -63,10 +63,10 @@ namespace SeatingChart.Pages.Students
             }
             else
             {
-                return RedirectToPage("./Index");
+                return RedirectToPage("./Index",new{chartNum = chartNum.ToString()});
             }
 
-            return RedirectToPage("./Index");
+            return RedirectToPage("./Index",new{chartNum = chartNum.ToString()});
         }
     }
 }

@@ -20,7 +20,7 @@ namespace SeatingChart.Pages.Students
             _context = context;
             Configuration = configuration;
         }
-
+        public int ChartNum {get;set;}
         public string NameSort { get; set; }
 
         public string CurrentFilter { get; set; }
@@ -32,9 +32,10 @@ namespace SeatingChart.Pages.Students
 
         public int numCols { get; set;}
 
-        public async Task OnGetAsync(string sortOrder,
+        public async Task OnGetAsync(int chartNum, string sortOrder,
             string currentFilter, string searchString, int? pageIndex)
         {
+            ChartNum = chartNum;
             CurrentSort = sortOrder;
             NameSort = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
             if (searchString != null)
@@ -67,7 +68,7 @@ namespace SeatingChart.Pages.Students
                     break;
             } 
         
-            var conf = from c in _context.Configurations select c;
+            var conf = from c in _context.Configurations.Where(c => c.ID == ChartNum) select c;
             numCols = 2;
             if(await conf.AnyAsync()) {
                 numCols = (await conf.FirstAsync()).NumberofColumns;

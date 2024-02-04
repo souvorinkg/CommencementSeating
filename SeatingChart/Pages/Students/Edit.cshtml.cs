@@ -26,8 +26,11 @@ namespace SeatingChart.Pages.Students
         [BindProperty]
         public int testing { get; set; } = default!;
 
-        public async Task<IActionResult> OnGetAsync(int? id)
+        public int? ChartNum {get;set;}
+
+        public async Task<IActionResult> OnGetAsync(int? id, int? chartNum)
         {
+            ChartNum = chartNum;
             if (id == null)
             {
                 return NotFound();
@@ -70,7 +73,7 @@ namespace SeatingChart.Pages.Students
                 }
             }
 
-            return RedirectToPage("./Index");
+            return RedirectToPage("./Index",new{chartNum = ChartNum.ToString()});
         }
 
         private bool StudentExists(int id)
