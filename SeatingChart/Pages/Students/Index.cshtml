@@ -8,13 +8,19 @@
 <h2>Seating Chart</h2>
 <html>
 <head>
+    <head>
     <title>Students</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" />
     <link href="https://cdn.syncfusion.com/ej2/17.1.43/material.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdn.syncfusion.com/ej2/17.1.43/material.css"> 
-    <script src="jquery-3.7.1.min.js"></script>
-    <script src="https://cdn.syncfusion.com/ej2/17.1.43/dist/ej2.min.js"></script> 
+    <link href="https://cdn.syncfusion.com/ej2/17.1.43/material.css" rel="stylesheet" />
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto">
     <link href='https://fonts.googleapis.com/css?family=Merriweather' rel='stylesheet'>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.syncfusion.com/ej2/17.1.43/dist/ej2.min.js"></script> 
+</head>
 </head>
 <body>
      <style>
@@ -93,8 +99,8 @@
             <div class="item">
                 @Model.Students.ElementAt(i).FirstName @Model.Students.ElementAt(i).MiddleName @Model.Students.ElementAt(i).LastName
                 <div class="buttons">
-                    <a href="/Students/Edit/?id=@Model.Students.ElementAt(i).ID&chartNum=@Model.ChartNum">Edit</a>
-                    <a href="/Students/Delete/?id=@Model.Students.ElementAt(i).ID&chartNum=@Model.ChartNum">Delete</a>
+                    <a href="/Students/Edit/?id=@student.ID"><i class="fas fa-edit"></i></a>
+                    <a href="/Students/Delete/?id=@student.ID"><i class="fas fa-trash-alt"></i></a>
                 </div>
             </div>
             @if((i+1) % Model.numCols == (Model.numCols / 2)){
