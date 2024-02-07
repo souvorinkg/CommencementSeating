@@ -53,14 +53,20 @@
         justify-content: space-between;  
         @* box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem orange;    *@
         font-family: 'Merriweather', light; 
-    
+    }
 
-
+    .first-middle {
+        font-size: 12px;
+    }
+    .last {
+        font-size: 14px;
     }
 
     h4 {
         text-align: center;
     }
+
+
 
     .btn-primary {
         color: #fff;
@@ -97,7 +103,15 @@
     <div class="wrapper">  
         @for(int i = 0; i < Model.Students.Count(); i++) {
             <div class="item">
-                @Model.Students.ElementAt(i).FirstName @Model.Students.ElementAt(i).MiddleName @Model.Students.ElementAt(i).LastName
+                <div class="name">
+                    <div class="first-middle">
+                    @Model.Students.ElementAt(i).FirstName @Model.Students.ElementAt(i).MiddleName
+                    </div> 
+                    <div class="last">
+                        @Model.Students.ElementAt(i).LastName
+                    </div>
+                </div>
+            
                 <div class="buttons">
                     <a href="/Students/Edit/?id=@Model.Students.ElementAt(i).ID"><i class="fas fa-edit"></i></a>
                     <a href="/Students/Delete/?id=@Model.Students.ElementAt(i).ID"><i class="fas fa-trash-alt"></i></a>
