@@ -40,7 +40,7 @@
         justify-content: space-between;  
     }
 
-    .buttons {
+    .buttons{
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -64,6 +64,10 @@
 
     .blank{
         visibility: hidden;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;  
     }
 
  </style>
@@ -93,9 +97,15 @@
                     <a href="/Students/Delete/?id=@Model.Students.ElementAt(i).ID&chartNum=@Model.ChartNum">Delete</a>
                 </div>
             </div>
-            @if(i % Model.numCols == (Model.numCols / 2)){
-                <div class="blank">h</div>
-            }
+            @if((i+1) % Model.numCols == (Model.numCols / 2)){
+                <div class="blank">
+                    <div class="item">
+                        Arbitrary Last Name
+                        <div> Blank</div>
+                        <div>Blank</div>
+                    </div>
+                </div>
+            }else{}
         }
     </div>
 
