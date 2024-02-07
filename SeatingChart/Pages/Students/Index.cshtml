@@ -84,8 +84,8 @@
             <div class="item">
                 @student.FirstName @student.MiddleName @student.LastName
                 <div class="buttons">
-                    <a href="/Students/Edit/?id=@student.ID&chartNum=@Model.ChartNum">Edit</a>
-                    <a href="/Students/Delete/?id=@student.ID&chartNum=@Model.ChartNum">Delete</a>
+                    <a href="/Students/Edit/?id=@student.ID"><i class="fas fa-edit"></i></a>
+                    <a href="/Students/Delete/?id=@student.ID"><i class="fas fa-trash-alt"></i></a>
                 </div>
             </div>
         }
