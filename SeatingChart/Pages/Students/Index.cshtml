@@ -99,16 +99,16 @@
             <div class="item">
                 @Model.Students.ElementAt(i).FirstName @Model.Students.ElementAt(i).MiddleName @Model.Students.ElementAt(i).LastName
                 <div class="buttons">
-                    <a href="/Students/Edit/?id=@student.ID"><i class="fas fa-edit"></i></a>
-                    <a href="/Students/Delete/?id=@student.ID"><i class="fas fa-trash-alt"></i></a>
+                    <a href="/Students/Edit/?id=@Model.Students.ElementAt(i).ID"><i class="fas fa-edit"></i></a>
+                    <a href="/Students/Delete/?id=@Model.Students.ElementAt(i).ID"><i class="fas fa-trash-alt"></i></a>
                 </div>
             </div>
             @if((i+1) % Model.numCols == (Model.numCols / 2)){
                 <div class="blank">
                     <div class="item">
                         Arbitrary Last Name
-                        <div> Blank</div>
-                        <div>Blank</div>
+                        <div> B</div>
+                        <div>B</div>
                     </div>
                 </div>
             }else{}
