@@ -18,11 +18,11 @@
 <h4>Copy and paste all students you want to add:</h4>
 <hr />
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-6">
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="namesInput" class="control-label" ></label>
+                <label asp-for="namesInput" class="control-label" >Name(s) to add:</label>
                 <textarea asp-for="namesInput" class="form-control" rows="15"></textarea>
                 <span asp-validation-for="namesInput" class="text-danger"></span>
             </div>
@@ -41,6 +41,24 @@
             </div>
         </form>
     </div>
+    <div class="col-md-6" id="info">
+            <p>
+                Add one or more students in the following format: <br><br> 
+                "First Middle(optional) Last"<br>
+                "First Middle(optional) Last"<br>
+                ...
+
+                <br>
+                <br>
+
+                To add reserved seats at the <b>beginning</b> chart,
+                add a student with the format "Reserved #," i.e. "Reserved 1"
+                <br>
+                <br>
+                To add Reserved seats at the <b>end</b> of the chart, add the letter "z", 
+                i.e. "blank z5"
+            </p>
+        </div>
 </div>
 
 <div>
