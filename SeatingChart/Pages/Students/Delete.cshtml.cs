@@ -24,6 +24,7 @@ namespace SeatingChart.Pages.Students
         [BindProperty]
         public Student Student { get; set; }
         public string ErrorMessage { get; set; }
+        [BindProperty]
         public int? ChartNum {get;set;}
 
         public async Task<IActionResult> OnGetAsync(int? id,int? chartNum, bool? saveChangesError = false)
