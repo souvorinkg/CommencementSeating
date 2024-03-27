@@ -36,6 +36,8 @@ namespace SeatingChart.Pages.Students
             string currentFilter, string searchString, int? pageIndex)
         {
             ChartNum = chartNum;
+            Console.WriteLine("ccc");
+            Console.WriteLine(chartNum);
             CurrentSort = sortOrder;
             NameSort = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
             if (searchString != null)

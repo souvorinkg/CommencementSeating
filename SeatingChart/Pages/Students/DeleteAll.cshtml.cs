@@ -41,7 +41,7 @@ namespace SeatingChart.Pages.Students
             {
                 _context.Students.RemoveRange(_context.Students);
                 await _context.SaveChangesAsync();
-                return RedirectToPage("./Index", new{chartNum = ChartNum.ToString()});
+                return RedirectToPage("./Index", new {chartNum = ChartNum.ToString()});
             }
             catch (DbUpdateException ex)
             {

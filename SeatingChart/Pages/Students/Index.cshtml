@@ -39,8 +39,8 @@
     .wrapper { 
         width: 100%;
         display: grid;
-        grid-template-columns: repeat(@(Model.numCols + 1), @(95/(Model.numCols + 1))%);
-        gap: @(5/(Model.numCols+1))px;  
+        grid-template-columns: repeat(@(Model.numCols + 1), @(95/Model.numCols)%);
+        gap: @(5/Model.numCols)px;  
         object-fit: cover;
     }
 
@@ -55,6 +55,8 @@
         height: 0;
         padding-bottom: 100%;
         float: left;
+        padding-left: 5%;
+        padding-right: 5%;
     }
 
     .buttons{
@@ -66,9 +68,6 @@
         height: 0;
         padding-bottom: 25%;
         float: right;
-    }
-    .last {
-        font-size: 14px;
     }
 
     h4 {
@@ -168,19 +167,10 @@
                         <p class="textContent">@Model.Students.ElementAt(i).FirstName @Model.Students.ElementAt(i).MiddleName @Model.Students.ElementAt(i).LastName</p>
                     </div>
                     <div class="buttons">
-                        <a href="/Students/Edit/?id=@Model.Students.ElementAt(i).ID" class="gridButton"><i class="fas fa-edit"></i></a>
-                        <a href="/Students/Delete/?id=@Model.Students.ElementAt(i).ID" class="gridButton"><i class="fas fa-trash-alt"></i></a>
+                        <a href="/Students/Edit/?id=@Model.Students.ElementAt(i).ID&chartNum=@Model.ChartNum" class="gridButton"><i class="fas fa-edit"></i></a>
+                        <a href="/Students/Delete/?id=@Model.Students.ElementAt(i).ID&chartNum=@Model.ChartNum" class="gridButton"><i class="fas fa-trash-alt"></i></a>
                     </div>
                 </div>
-                @if((i+1) % Model.numCols == (Model.numCols / 2)){
-                    <div class="blank">
-                        <div class="item">
-                            Arbitrary Last Name
-                            <div> B</div>
-                            <div>B</div>
-                        </div>
-                    </div>
-                }
             }
         </div>
     </div>
