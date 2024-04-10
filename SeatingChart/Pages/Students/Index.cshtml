@@ -4,11 +4,11 @@
 @{
     ViewData["Title"] = "Primary Seating Chart";
 }
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" />
 
 <h2>Seating Chart</h2>
 <html>
 <head>
+    <head>
     <title>Students</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -21,52 +21,73 @@
     <script src="jquery-3.7.1.min.js"></script>
     <script src="https://cdn.syncfusion.com/ej2/17.1.43/dist/ej2.min.js"></script> 
 </head>
-<style>
+</head>
+<body>
+     <style>
+    #student-table-container{
+        height: 80vh;
+        width: 100%;
+        overflow: scroll
+    }
 
+    #student-table{
+      width: 100%;
+      border-collapse: collapse;
+      transition: transform 0.5s ease;
+    }
     
     .wrapper { 
+        width: 100%;
         display: grid;
-        grid-template-columns: repeat(@Model.numCols, 1fr);
-        gap: 5px;  
-        @* overflow: scroll;  *@
+        grid-template-columns: repeat(@(Model.numCols + 1), @(95/Model.numCols)%);
+        gap: @(5/Model.numCols)px;  
         object-fit: cover;
-        @* justify-content: center; *@
     }
 
     .wrapper > div {
+        width: 100%;
         border: 2px solid #222;
         border-radius: 3px; 
-        font-family: 'Merriweather';
+        font-family: 'Merriweather', light;
     }
 
     .item {
-        padding: 5px;
+        height: 0;
+        padding-bottom: 100%;
+        float: left;
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .buttons{
         display: flex;
         flex-direction: row;
-        align-items: center;
         justify-content: space-between;  
-    }
-
-    .name {
-    display: flex;
-    flex-direction: column; /* Add this line */
-}
-
-    .buttons {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-between;  
-        @* box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem orange;    *@
         font-family: 'Merriweather', light; 
-    
-
-
+        width: 100%;
+        height: 0;
+        padding-bottom: 25%;
+        float: right;
     }
-    
 
     h4 {
         text-align: center;
+    }
+
+    i{
+        width: 100%;
+    }
+
+    p{
+        width: 100%;
+        height: 0;
+        padding-bottom: inherit;
+        margin:0%;
+        word-spacing: 100vh;
+    }
+
+    ::before{
+        width: 100%;
     }
 
     .btn-primary {
@@ -74,26 +95,62 @@
         background-color: #f5822a;
         border-color: #f5822a;
     }
-    div.last-name {
+
+    .blank{
+        visibility: hidden;
+        @* display: flex;
+        flex-direction: row; *@
+        align-items: center;
+        justify-content: space-between;  
+    }
+
+    .textContent{
         font-size: 16px;
-
+        @* margin: 5% *@
+        @* white-space: nowrap; *@
     }
-    div.first-middle-name {
-        font-size: 14px;
 
+    .textWrap{
+        width: 100%;
+        height: 0;
+        padding-bottom: 75%;
     }
-    
+
+    .gridButton{
+        width: 25%;
+        height: 0;
+        padding-bottom: 25%;
+    }
+
+    .fas{
+        display: flex;
+        height: 0;
+        padding-bottom: 100%;
+    }
+
+    .fa-edit:before{
+        height: 0;
+        padding-bottom:100%;
+        display:flex;
+        width:100%;
+    }
+
+    .fa-trash-alt:before{
+        height: 0;
+        padding-bottom:100%;
+        display:flex;
+        width:100%;
+    }
+
  </style>
-<body>
     
     @* <a class="btn btn-primary" href="/Students/SetNumColumns/?num=@(Model.numCols + 1)">Add Column</a>
     <a class="btn btn-primary" href="/Students/SetNumColumns/?num=@(Model.numCols - 1)">Remove Column</a> *@
 
-    <a class="btn btn-primary" asp-page="SetNumColumns" asp-route-num="@(Model.numCols + 1)">Add Column</a>
-    <a class="btn btn-primary" asp-page="SetNumColumns" asp-route-num="@(Model.numCols - 1)">Remove Column</a>
-    <a class="btn btn-primary" asp-page="Create">Add Student</a>
-    <a class="btn btn-primary" asp-page="DeleteAll">Delete All</a>
-   
+    <a class="btn btn-primary" asp-page="SetNumColumns" asp-route-num="@(Model.numCols + 1)" asp-route-chartNum="@(Model.ChartNum)">Add Column</a>
+    <a class="btn btn-primary" asp-page="SetNumColumns" asp-route-num="@(Model.numCols - 1)" asp-route-chartNum="@(Model.ChartNum)">Remove Column</a>
+    <a class="btn btn-primary" asp-page="Create" asp-route-chartNum="@(Model.ChartNum)">Add Student</a>
+    <a class="btn btn-primary" asp-page="DeleteAll" asp-route-chartNum="@(Model.ChartNum)">Delete All</a>
 
     <h4>Front</h4>
     
@@ -102,33 +159,201 @@
     
     @*<div id="Grid"></div>*@ 
 
-    
- <div class="wrapper">        
-    @foreach (var student in Model.Students) {
-        <div class="item">
-    <div class="name">
-        <div class="first-middle-name">
-            @student.FirstName @student.MiddleName
-        </div>
-        <div class="last-name">
-            @student.LastName
-        </div>
-    </div>
-        <div class="buttons">
-            <a href="/Students/Edit/?id=@student.ID"><i class="fas fa-edit"></i></a>
-            <a href="/Students/Delete/?id=@student.ID"><i class="fas fa-trash-alt"></i></a>
+    <div id="student-table-container">
+        <div class="wrapper" id="student-table">  
+            @for(int i = 0; i < Model.Students.Count(); i++) {
+                <div class="item">
+                    <div class="textWrap">
+                        <p class="textContent">@Model.Students.ElementAt(i).FirstName @Model.Students.ElementAt(i).MiddleName @Model.Students.ElementAt(i).LastName</p>
+                    </div>
+                    <div class="buttons">
+                        <a href="/Students/Edit/?id=@Model.Students.ElementAt(i).ID&chartNum=@Model.ChartNum" class="gridButton"><i class="fas fa-edit"></i></a>
+                        <a href="/Students/Delete/?id=@Model.Students.ElementAt(i).ID&chartNum=@Model.ChartNum" class="gridButton"><i class="fas fa-trash-alt"></i></a>
+                    </div>
+                </div>
+            }
         </div>
     </div>
-    }
-</div>
 
-
-
+    <div id="zoom-controls">
+        <button onclick="zoomIn()">Zoom In</button>
+        <button onclick="zoomOut()">Zoom Out</button>
+    </div>
     <h4>Back</h4>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 } 
+    <script>
+        // JavaScript functions to handle zooming
+        let currentWidth = 100; // Initial width
+
+        function zoomIn() {
+            currentWidth += 20;
+            applyZoom();
+        }
+
+        function zoomOut() {
+        if (currentWidth > 20) { // Limit minimum zoom
+            currentWidth -= 20;
+            applyZoom();
+        }
+        }
+
+        function applyZoom() {
+            document.getElementById('student-table').style.width = currentWidth + '%';
+            resize();
+        }
+    </script>
+    <script>
+        window.onload = function() {
+            resize();
+        };
+
+        window.onresize = function() {
+            resize();
+        };
+
+        function resize(){
+            resizeText();
+            resizeIcons();
+        }
+
+        @* Start: font resize function resulting in each item having unique font to perfectly fit in box *@
+        @* function resizeText() {
+            var textElements = document.querySelectorAll('.textContent');
+
+            textElements.forEach(function(element) {
+                var fontSize = parseFloat(getComputedStyle(element).fontSize);
+
+                var textWidth = element.scrollWidth;
+                var parentDivWidth = element.clientWidth;
+                var textHeight = element.scrollHeight;
+                var parentDivHeight = element.clientHeight;
+                var overflow = textWidth > parentDivWidth || textHeight > parentDivHeight;
+                
+                if (!overflow){
+                    while (!overflow){
+                        fontSize += 1;
+                        element.style.fontSize = fontSize + 'px';
+                        textWidth = element.scrollWidth;
+                        textHeight = element.scrollHeight;
+                        overflow = textWidth > parentDivWidth || textHeight > parentDivHeight;
+                    }
+                    fontSize -= 1;
+                    element.style.fontSize = fontSize + 'px';
+                }
+
+                else if (overflow){
+                    while (overflow){
+                        fontSize -= 1;
+                        element.style.fontSize = fontSize + 'px';
+                        textWidth = element.scrollWidth;
+                        textHeight = element.scrollHeight;
+                        overflow = textWidth > parentDivWidth || textHeight > parentDivHeight;
+                    }
+                }
+            });
+        } *@
+        @* End Function *@
+
+        @* Start: font resize function where all items have the same size font*@
+        function resizeText() {
+            var textElements = document.querySelectorAll('.textContent');
+            var biggestElement;
+            var biggestLength = 0;
+            var fontSz;
+
+            textElements.forEach(function(element) {
+                const words = element.textContent.split(" ");
+                words.forEach(function(word){
+                    if (word.length > biggestLength){
+                        biggestElement = element;
+                        biggestLength = word.length;
+                    }
+                });
+                
+            });
+
+            fontSz = newFontSize(biggestElement);
+
+            textElements.forEach(function(element) {
+                element.style.fontSize = fontSz + 'px';
+            });
+        }
+
+        function newFontSize(element){
+            var fontSize = parseFloat(getComputedStyle(element).fontSize);
+            var textWidth = element.scrollWidth;
+            var parentDivWidth = element.clientWidth;
+            var textHeight = element.scrollHeight;
+            var parentDivHeight = element.clientHeight;
+            var overflow = textWidth > parentDivWidth || textHeight > parentDivHeight;
+            
+            if (!overflow){
+                while (!overflow){
+                    fontSize += 1;
+                    element.style.fontSize = fontSize + 'px';
+                    textWidth = element.scrollWidth;
+                    textHeight = element.scrollHeight;
+                    overflow = textWidth > parentDivWidth || textHeight > parentDivHeight;
+                }
+                fontSize -= 1;
+                element.style.fontSize = fontSize + 'px';
+            }
+
+            else if (overflow){
+                while (overflow){
+                    fontSize -= 1;
+                    element.style.fontSize = fontSize + 'px';
+                    textWidth = element.scrollWidth;
+                    textHeight = element.scrollHeight;
+                    overflow = textWidth > parentDivWidth || textHeight > parentDivHeight;
+                }
+            }
+            return fontSize;
+        }
+        @* End Function *@
+
+
+        function resizeIcons(){
+            var iconElements = document.querySelectorAll('.fas')
+            iconElements.forEach(function(element){
+                var fontSize = parseFloat(getComputedStyle(element).fontSize);
+
+                var textWidth = element.scrollWidth;
+                var parentDivWidth = element.clientWidth;
+                var textHeight = element.scrollHeight;
+                var parentDivHeight = element.clientHeight;
+                console.log(textWidth + " : " + parentDivWidth);
+                var overflow = textWidth > parentDivWidth || textHeight > parentDivHeight;
+                if (!overflow){
+                    console.log("increases size");
+                    while (!overflow){
+                        fontSize += 1;
+                        element.style.fontSize = fontSize + 'px';
+                        textWidth = element.scrollWidth;
+                        textHeight = element.scrollHeight;
+                        overflow = textWidth > parentDivWidth || textHeight > parentDivHeight;
+                    }
+                    fontSize -= 1;
+                    element.style.fontSize = fontSize + 'px';
+                }
+
+                else if (overflow){
+                    console.log("decrease size");
+                    while (overflow){
+                        fontSize -= 1;
+                        element.style.fontSize = fontSize + 'px';
+                        textWidth = element.scrollWidth;
+                        textHeight = element.scrollHeight;
+                        overflow = textWidth > parentDivWidth || textHeight > parentDivHeight;
+                    }
+                }
+            });
+        }
+
+    </script>
 
 </body>
 </html>
